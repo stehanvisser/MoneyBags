@@ -1,0 +1,104 @@
+:root {
+  --pixel-size: 5;
+}
+
+body {
+  background: black;
+  font-family: "Press Start 2P", cursive;
+}
+
+.moneybags-output-container {
+  cursor: pointer;
+  margin-left: auto;
+  margin-right: auto;
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  max-width: 800px;
+}
+
+.moneybag {
+  width: calc(32px * var(--pixel-size));
+  height: calc(32px * var(--pixel-size));
+  overflow: hidden;
+  cursor: pointer;
+  position: relative;
+  animation: popUp 2s forwards linear;
+}
+
+.moneybag-sprite {
+  width: calc(128px * var(--pixel-size));
+}
+
+.moneybag-sprite:hover {
+  animation: animateSprite 1s steps(4) infinite;
+}
+
+.moneybag-sprite:focus {
+  animation: animateSprite 1s steps(4) infinite;
+}
+
+.pixelart {
+  image-rendering: pixelated;
+}
+
+.number {
+  color: #e8c170;
+  font-size: 20px;
+  font-weight: bold;
+  position: absolute;
+}
+
+.heading {
+  color: #75a743;
+  font-weight: bold;
+  font-size: 50px;
+  text-align: center;
+  margin: 50px;
+}
+
+.swap-scene {
+  display: grid;
+  grid-template-columns: auto auto;
+  justify-content: space-around;
+}
+
+.payout-scene {
+  display: flex;
+  justify-content: center;
+}
+
+.btn {
+  height: 80px;
+  width: 200px;
+  background: #884b2b;
+  border: 5px solid #341c27;
+  font-size: 20px;
+  font-weight: bold;
+  color: #e8c170;
+  font-family: "Press Start 2P", cursive;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background: #602c2c;
+}
+
+@keyframes animateSprite {
+  from {
+    transform: translate3d(0px, 0, 0);
+  }
+
+  to {
+    transform: translate3d(-100%, 0, 0);
+  }
+}
+
+@keyframes popUp {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
